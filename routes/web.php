@@ -12,15 +12,23 @@ Route::view('/', 'home', [
     'prodi' => 'sistem informasi'
 ])->name('home-page');
 
-Route::view('/blog', 'blog', [
-    'title' => 'Go-Blog',
-    'subtitle' => 'Blog Page',
-    'name' => 'Muhammad Ihza Sofyansyah',
-    'prodi' => 'sistem informasi'
-])->name('blog-page');
+// Route::view('/blog', 'blog', [
+//     'title' => 'Go-Blog',
+//     'subtitle' => 'Blog Page',
+//     'name' => 'Muhammad Ihza Sofyansyah',
+//     'prodi' => 'sistem informasi'
+// ])->name('blog-page');
 
-Route::get('/posts', [Post::all()]);
-Route::get('/post/detail/{id}', [Post::find($id)]);
+Route::get('/posts',function () {
+    return view('posts', 
+    [
+        'title' => 'Go-Blog',
+        'subtitle' => 'Home Page',
+        'name' => 'Muhammad Ihza Sofyansyah',
+        'prodi' => 'sistem informasi'
+    ]);
+});
+// Route::get('/post/detail/{id}', [Post::find($id)]);
 
 Route::view('/about', 'about', [
     'title' => 'Go-Blog',
