@@ -25,7 +25,8 @@ Route::get('/posts',function () {
         'title' => 'Go-Blog',
         'subtitle' => 'Home Page',
         'name' => 'Muhammad Ihza Sofyansyah',
-        'prodi' => 'sistem informasi'
+        'prodi' => 'sistem informasi',
+        'posts' => Post::all()
     ]);
 });
 // Route::get('/post/detail/{id}', [Post::find($id)]);
