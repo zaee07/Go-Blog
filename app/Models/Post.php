@@ -3,18 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Support\Arr;
-
+// use PhpParser\Node\Expr\Cast\Array_;
 
 // use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Illuminate\Database\Eloquent\Model;
 
 class Post
 {
-    // use HasFactory; 
-    public function __construct()
-    {
-        'oke';
-    }
+    // use HasFactory;
     public static function all() {
         // view('blog');
         return [
@@ -35,10 +31,9 @@ class Post
         ];
     }
 
-    public static function find($id) {
-        $post = Arr::first(static::all(), fn($post)=> $post['id'] === $id);
-        // return (!$post) ? abort(404) : $post;
-        return $post;
+    public static function find($slug): array {
+        $post = Arr::first(static::all(), fn($post)=> $post['slug'] === $slug);
+        return (!$post) ? abort(404) : $post;
     }   
 
 }

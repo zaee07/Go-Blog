@@ -1,4 +1,4 @@
-{{ dd($post) }}
+{{-- {{ dd($post) }} --}}
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-slot:subtitle>{{ $subtitle }}</x-slot:subtitle>

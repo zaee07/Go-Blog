@@ -29,14 +29,14 @@ Route::get('/posts',function () {
         'posts' => Post::all()
     ]);
 });
-Route::get('/post/detail/{id}', function($id) {
+Route::get('/post/{slug}', function($slug) {
     return view('post',
     [
         'title' => 'Go-Blog',
         'subtitle' => '',
         'name' => 'Muhammad Ihza Sofyansyah',
         'prodi' => 'sistem informasi',
-        'post' => Post::find($id)
+        'post' => Post::find($slug)
     ]);
 });
 
