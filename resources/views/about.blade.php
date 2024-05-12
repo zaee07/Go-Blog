@@ -4,4 +4,5 @@
     <x-slot:name>{{ $name }}</x-slot:name>
 
     <h3 class="text-xl">bismillah about</h3>
+    <p>{{ $name }}</p>
 </x-layout>
