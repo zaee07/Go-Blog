@@ -37,7 +37,8 @@ class Post
 
     public static function find($id) {
         $post = Arr::first(static::all(), fn($post)=> $post['id'] === $id);
-        (!$post) ? abort(404) : $post;
-    }
+        // return (!$post) ? abort(404) : $post;
+        return $post;
+    }   
 
 }

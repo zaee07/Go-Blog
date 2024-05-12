@@ -23,13 +23,22 @@ Route::get('/posts',function () {
     return view('posts', 
     [
         'title' => 'Go-Blog',
-        'subtitle' => 'Home Page',
+        'subtitle' => 'Blog Page',
         'name' => 'Muhammad Ihza Sofyansyah',
         'prodi' => 'sistem informasi',
         'posts' => Post::all()
     ]);
 });
-// Route::get('/post/detail/{id}', [Post::find($id)]);
+Route::get('/post/detail/{id}', function($id) {
+    return view('post',
+    [
+        'title' => 'Go-Blog',
+        'subtitle' => '',
+        'name' => 'Muhammad Ihza Sofyansyah',
+        'prodi' => 'sistem informasi',
+        'post' => Post::find($id)
+    ]);
+});
 
 Route::view('/about', 'about', [
     'title' => 'Go-Blog',
