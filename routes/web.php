@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::view('/', 'home', [
@@ -16,6 +18,9 @@ Route::view('/blog', 'blog', [
     'name' => 'Muhammad Ihza Sofyansyah',
     'prodi' => 'sistem informasi'
 ])->name('blog-page');
+
+Route::get('/posts', [Post::all()]);
+Route::get('/post/detail/{id}', [Post::find($id)]);
 
 Route::view('/about', 'about', [
     'title' => 'Go-Blog',
